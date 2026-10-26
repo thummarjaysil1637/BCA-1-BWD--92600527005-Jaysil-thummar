@@ -1,0 +1,46 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVEN OR ODD CHECKER</title>
+   
+</head>
+<body bgcolor="#E8F5E9 ">
+
+    <div class="container">
+        <h2>EVEN OR ODD CHECKER</h2>
+        <input type="number" id="numberInput" placeholder="Enter an integer">
+        <br>
+        <button onclick="checkEvenOdd()">Check</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function checkEvenOdd() {
+          
+            const inputVal = document.getElementById('numberInput').value;
+            const resultDiv = document.getElementById('result');
+
+           
+            if (inputVal === "") {
+                resultDiv.style.color = "red";
+                resultDiv.textContent = "Please enter a valid number!";
+                return;
+            }
+
+            const num = parseInt(inputVal);
+
+            if (num % 2 === 0) {
+                resultDiv.style.color = "green";
+                resultDiv.textContent = num + " is Even.";
+            } else {
+                resultDiv.style.color = "orange";
+                resultDiv.textContent = num + " is Odd.";
+            }
+        }
+    </script>
+
+</body>
+</html>
