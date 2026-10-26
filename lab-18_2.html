@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Personal Information Form</title>
+</head>
+<body bgcolor="silver ">
+    <h2>Personal Information Form</h2>
+
+    <form id="myForm">
+        Name:
+        <input type="text" id="name" required>
+        <br><br>
+
+        Age:
+        <input type="number" id="age" min="1" max="120" required>
+        <br><br>
+
+        Gender:
+        <input type="radio" name="gender" value="Male" required> Male
+        <input type="radio" name="gender" value="Female"> Female
+        <input type="radio" name="gender" value="Other"> Other
+        <br><br>
+
+        City:
+        <input type="text" id="city" required>
+        <br><br>
+
+        State:
+        <input type="text" id="state" required>
+        <br><br>
+
+        Country:
+        <input type="text" id="country" required>
+        <br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <h3>Entered Details:</h3>
+    <p id="result"></p>
+
+    <script>
+        document.getElementById("myForm").onsubmit = function(event) {
+            event.preventDefault();
+
+            let name = document.getElementById("name").value;
+            let age = document.getElementById("age").value;
+            let gender = document.querySelector(
+                'input[name="gender"]:checked'
+            ).value;
+            let city = document.getElementById("city").value;
+            let state = document.getElementById("state").value;
+            let country = document.getElementById("country").value;
+
+            document.getElementById("result").innerHTML =
+                "Name: " + name + "<br>" +
+                "Age: " + age + "<br>" +
+                "Gender: " + gender + "<br>" +
+                "City: " + city + "<br>" +
+                "State: " + state + "<br>" +
+                "Country: " + country;
+        };
+    </script>
+
+</body>
+</html>
