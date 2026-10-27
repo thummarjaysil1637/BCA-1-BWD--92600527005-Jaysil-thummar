@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pyramid Structure</title>
+</head>
+<body bgcolor="#C8C4DF">
+    <h2>Pyramid Structure Using While Loop</h2>
+
+    <pre id="result"></pre>
+
+    <script>
+        let i = 1;
+        let pyramid = "";
+
+        while (i <= 5) {
+            let j = 1;
+            while (j <= i) {
+                pyramid += "1 ";
+                j++;
+            }
+
+            pyramid += "\n";
+            i++;
+        }
+
+        document.getElementById("result").textContent = pyramid;
+    </script>
+</body>
+</html>

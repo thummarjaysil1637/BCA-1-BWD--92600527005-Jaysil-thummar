@@ -1,0 +1,46 @@
+
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Armstrong Number Checker</title>
+        </head>
+        <body>
+            <h2>Armstrong Number Checker</h2>
+        
+            <label>Enter a number:</label>
+            <input type="number" id="num">
+        
+            <button onclick="checkArmstrong()">Check</button>
+        
+            <p id="result"></p>
+        
+            <script>
+                function checkArmstrong() {
+                    let n = parseInt(document.getElementById("num").value);
+                    let temp = n;
+                    let sum = 0;
+                    let digits = n.toString().length;
+        
+                    if (isNaN(n) || n < 0) {
+                        document.getElementById("result").innerHTML =
+                            "Please enter a valid non-negative number.";
+                        return;
+                    }
+        
+                    while (temp > 0) {
+                        let digit = temp % 10;
+                        sum += Math.pow(digit, digits);
+                        temp = Math.floor(temp / 10);
+                    }
+        
+                    if (sum === n) {
+                        document.getElementById("result").innerHTML =
+                            n + " is an Armstrong number.";
+                    } else {
+                        document.getElementById("result").innerHTML =
+                            n + " is not an Armstrong number.";
+                    }
+                }
+            </script>
+        </body>
+        </html>

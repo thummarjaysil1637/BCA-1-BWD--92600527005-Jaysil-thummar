@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Month Name</title>
+</head>
+<body>
+    <h2>Display Month Name</h2>
+
+    <label>Enter Month Number (1-12): </label>
+    <input type="number" id="month">
+
+    <button onclick="showMonth()">Show Month</button>
+
+    <h3 id="result"></h3>
+
+    <script>
+        function showMonth() {
+            let month = parseInt(
+                document.getElementById("month").value
+            );
+            let name;
+
+            switch (month) {
+                case 1:
+                    name = "January";
+                    break;
+                case 2:
+                    name = "February";
+                    break;
+                case 3:
+                    name = "March";
+                    break;
+                case 4:
+                    name = "April";
+                    break;
+                case 5:
+                    name = "May";
+                    break;
+                case 6:
+                    name = "June";
+                    break;
+                case 7:
+                    name = "July";
+                    break;
+                case 8:
+                    name = "August";
+                    break;
+                case 9:
+                    name = "September";
+                    break;
+                case 10:
+                    name = "October";
+                    break;
+                case 11:
+                    name = "November";
+                    break;
+                case 12:
+                    name = "December";
+                    break;
+                default:
+                    name = "Invalid month number!";
+            }
+
+            document.getElementById("result").innerHTML = name;
+        }
+    </script>
+</body>
+</html>

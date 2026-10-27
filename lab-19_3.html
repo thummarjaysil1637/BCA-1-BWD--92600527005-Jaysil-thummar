@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Even Odd and Prime Checker</title>
+</head>
+<body>
+    <h2>Number Checker</h2>
+
+    <label>Enter a Number:</label>
+    <input type="number" id="num">
+
+    <button onclick="checkNumber()">Check</button>
+
+    <p id="result"></p>
+
+    <script>
+        function checkNumber() {
+            let n = parseInt(document.getElementById("num").value);
+            let result = "";
+
+            if (isNaN(n)) {
+                document.getElementById("result").innerHTML =
+                    "Please enter a valid number.";
+                return;
+            }
+
+            // Check Even or Odd
+            if (n % 2 == 0) {
+                result += n + " is Even.<br>";
+            } else {
+                result += n + " is Odd.<br>";
+            }
+
+            // Check Prime or Not Prime
+            if (n <= 1) {
+                result += n + " is Not Prime.";
+            } else {
+                let prime = true;
+
+                for (let i = 2; i <= Math.sqrt(n); i++) {
+                    if (n % i == 0) {
+                        prime = false;
+                        break;
+                    }
+                }
+
+                if (prime) {
+                    result += n + " is Prime.";
+                } else {
+                    result += n + " is Not Prime.";
+                }
+            }
+
+            document.getElementById("result").innerHTML = result;
+        }
+    </script>
+</body>
+</html>
